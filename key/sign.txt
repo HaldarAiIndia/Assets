@@ -1,0 +1,18 @@
+termux-setup-storage
+cd $HOME
+
+pkg update -y
+pkg upgrade -y
+pkg install openjdk-21 -y
+
+keytool -genkeypair -v -keystore haldarai-release.jks -storetype JKS -keyalg RSA -keysize 4096 -sigalg SHA256withRSA -validity 36500 -alias haldarai_key
+
+keytool -list -v -keystore haldarai-release.jks
+
+mv haldarai-release.jks /sdcard/Download/
+
+ls /sdcard/Download/
+
+
+pass:-
+haistudio2007
